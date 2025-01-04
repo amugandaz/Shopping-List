@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success" (click)="addShopping()">New Shopping</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="shopping-list col-md-3" *ngIf="shoppings.length > 0">
+      <app-shopping-list-element
+        *ngFor="let shopping of shoppings"
+        [shopping]="shopping"
+        (click)='select(shopping)'
+        (fireDelete)='deleteCurrent()'>
+      </app-shopping-list-element>
+    </div>
+    <div class="col-md-9">
+      <app-shopping-view *ngIf="currentShopping !== null"
+                        [shopping]="currentShopping">
+                        
+      </app-shopping-view>
+    </div>
+  </div>

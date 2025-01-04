@@ -1,0 +1,9 @@
+<form class="ui large form segment">
+    <h3 class="ui header">Shopping details</h3>
+    <fieldset [disabled]="!edit ? 'disabled' : null">
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input class="form-control" name="productName" id="productName" [(ngModel)]="shopping.productName">
+      </div>
+    </fieldset>
+  </form>
